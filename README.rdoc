@@ -1,0 +1,12 @@
+Instructions to use the application
+
+Go to the command line and type the following
+
+1. "bundle install" which installs the gems for this project
+2. "rake db:setup" to setup the database and load the database with data
+3. "rake db:test:prepare" to set up a test database
+3. "bundle exec rspec" to run the test suite
+4 "rake xml_import" to import the XML data onto to the site
+5. Finally type "rails server" to start the application
+
+Caching could be implemented in the application by using fragment caching on the page to only change when the items or their content changes through an active record cache key or after a set period of time,this also allows parts of the page which stay the same to be cached such as the menus, headers, footers etc... 

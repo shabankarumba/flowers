@@ -1,0 +1,19 @@
+<h1> Flowers </h1>
+
+<%= form_tag("/items", :method => "post") do %>
+  <%= select_tag(:country, options_for_select([["UK","GB"],["France", "FR"],["Germany", "DE"]], params[:country])) %>
+
+  <%= submit_tag %>
+
+<% end %>
+
+<% if @items.empty? %>
+  <p> No Items </p>
+<% else %>
+  <% @items.each do |i| %>
+   <p><%= i.title %></p>
+   <p><%= i.currency %> <%= i.price %></p>
+   <p><%= i.description %></p>
+   <p><%= image_tag(i.image_link) %></p>
+  <% end %>
+<% end %>
